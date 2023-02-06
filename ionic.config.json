@@ -1,0 +1,7 @@
+{
+  "name": "monthly-expenses-pwa",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
