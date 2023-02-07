@@ -13,6 +13,7 @@ $RECYCLE.BIN/
 log.txt
 
 .vscode
+/tests-examples
 
 /.sourcemaps
 /.versions
@@ -67,3 +68,6 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/test-results/
+/playwright-report/
+/playwright/.cache/
