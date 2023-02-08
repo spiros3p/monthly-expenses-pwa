@@ -4,5 +4,6 @@ module.exports = {
     setupFilesAfterEnv: ["<rootDir>/setup-jest.ts"],
     testMatch: [
         "<rootDir>/src/**/*.spec.ts"
-    ]
+    ],
+    collectCoverage: true
 };
