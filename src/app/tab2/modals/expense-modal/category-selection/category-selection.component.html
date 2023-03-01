@@ -1,8 +1,0 @@
-<div class="selection-container">
-  <app-category-line
-    *ngFor="let category of categories;"
-    [category]="category"
-    [outline]="category !== selection"
-    (click)="onSelect(category)"
-  ></app-category-line>
-</div>
