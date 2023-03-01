@@ -12,14 +12,12 @@ import { ExpenseModel } from 'src/app/models/Expenses.model';
 import { SalaryModel } from 'src/app/models/Salary.model';
 import { ChangeDetectorRef } from '@angular/core';
 
-const DEFAULT_SALARY = { id: 'id', amount: 0 };
-
 @Component({
   selector: 'app-donut-chart-area',
   templateUrl: './donut-chart-area.component.html',
   styleUrls: ['./donut-chart-area.component.scss'],
 })
-export class DonutChartAreaComponent implements OnInit, OnChanges {
+export class DonutChartAreaComponent implements OnChanges {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
   @Input() expensesData: ExpenseModel[] = [];
   @Input() salaryData!: SalaryModel;
@@ -29,12 +27,9 @@ export class DonutChartAreaComponent implements OnInit, OnChanges {
 
   constructor(private changeDetectorRef: ChangeDetectorRef) {}
 
-  ngOnInit(): void {}
-
   ngOnChanges(changes: SimpleChanges): void {
     if (this.salaryData !== undefined && this.expensesData !== undefined) {
       this.calculateData(this.expensesData, this.salaryData);
-      this;
     }
   }
 
@@ -84,7 +79,7 @@ export class DonutChartAreaComponent implements OnInit, OnChanges {
   // Doughnut ////////////////////////////////////////////////////
   public doughnutChartLabels: string[] = [];
   public doughnutChartDatasets: ChartConfiguration<'doughnut'>['data']['datasets'] =
-    [{ data: [1500, 450, 100], label: this.symbol }];
+    [{ data: [1], label: this.symbol }];
   public doughnutChartOptions: ChartConfiguration<'doughnut'>['options'] = {
     responsive: false,
     plugins: { legend: { position: 'bottom' } },
