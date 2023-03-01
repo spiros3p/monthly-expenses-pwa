@@ -1,0 +1,21 @@
+<ion-row>
+  <ion-col size="auto" class="dayOfMonth-container">
+    <span class="dayOfMonth-number">{{ expenseData.dayOfMonth }}</span>
+    <span class="dayOfMonth-ordinal">{{
+      expenseData.dayOfMonth | ordinal : false
+    }}</span>
+  </ion-col>
+  <ion-col class="category-description-container">
+    <div class="category">
+      <app-category-line [category]="expenseData.category"></app-category-line>
+    </div>
+    <div class="description">
+      <span class="description-text">{{
+        expenseData.description ? (expenseData.description | ellipsis : 33) : "-"
+      }}</span>
+    </div>
+  </ion-col>
+  <ion-col size="auto" class="amount-container">
+    <app-amount-line [amount]="expenseData.amount" [color]="amountColor"></app-amount-line>
+  </ion-col>
+</ion-row>

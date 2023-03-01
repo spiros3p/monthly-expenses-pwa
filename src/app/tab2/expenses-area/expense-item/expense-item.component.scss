@@ -1,0 +1,41 @@
+:host {
+  width: 100%;
+}
+
+.dayOfMonth-container {
+  align-self: center;
+  // margin-right: 5px;
+  width: 46.5px !important;
+
+  & .dayOfMonth-number,
+  .dayOfMonth-ordinal {
+    font-weight: 500;
+  }
+
+  & .dayOfMonth {
+    &-number {
+      font-size: 20px;
+    }
+    &-ordinal {
+      font-size: 12px;
+    }
+  }
+}
+
+.category-description-container {
+  & .description {
+    padding-left: 5px;
+    padding-right: 5px;
+    &-text {
+        font-size: 13px;
+    }
+  }
+}
+
+.amount-container {
+    align-self: center;
+    
+    & .amount-text{
+        font-size: 14px;
+    }
+}

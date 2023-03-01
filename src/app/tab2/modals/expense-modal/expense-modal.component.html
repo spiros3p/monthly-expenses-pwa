@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="medium" (click)="cancel()">Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Welcome</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="confirm()" [disabled]="!isValidForm()"
+        >Confirm</ion-button
+      >
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="expenseForm">
+    <ion-item>
+      <ion-label position="stacked">Amount</ion-label>
+      <ion-input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]+([.][0-9]+)?"
+        formControlName="amount"
+        placeholder="cost of the expense"
+      >
+        <span class="symbol">{{ symbol }}</span>
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Day of month</ion-label>
+      <ion-input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        formControlName="dayOfMonth"
+        placeholder="when the expense occurs"
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Category</ion-label>
+      <ion-input
+        type="hidden"
+        formControlName="category"
+        placeholder="category"
+      ></ion-input>
+      <app-category-selection
+        [categories]="categories"
+        (newSelection)="onCategoryNewSelection($event)"
+      ></app-category-selection>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Description</ion-label>
+      <ion-textarea
+        formControlName="description"
+        placeholder="description"
+      ></ion-textarea>
+    </ion-item>
+  </form>
+</ion-content>
