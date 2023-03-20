@@ -12,6 +12,9 @@ import {
 import { SalaryFormModel, SalaryModel } from 'src/app/models/Salary.model';
 import { SalaryDataService } from 'src/app/services/salary/salary-data.service';
 import { CustomFormValidators } from 'src/app/shared/validators/customValidators';
+import { environment } from 'src/environments/environment';
+
+const DEFAULT_SYMBOL = environment.currency;
 
 @Component({
   selector: 'app-salary-modal',
@@ -72,7 +75,7 @@ export class SalaryModalComponent {
   }
 
   resolveSymbol() {
-    this.symbol = '€';
+    this.symbol = DEFAULT_SYMBOL;
   }
 
   isValidForm() {

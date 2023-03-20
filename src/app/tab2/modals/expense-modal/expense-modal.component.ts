@@ -7,6 +7,9 @@ import {
   Categories,
 } from 'src/app/models/Expenses.model';
 import { CustomFormValidators } from 'src/app/shared/validators/customValidators';
+import { environment } from 'src/environments/environment';
+
+const DEFAULT_SYMBOL = environment.currency;
 
 @Component({
   selector: 'app-expense-modal',
@@ -35,7 +38,7 @@ export class ExpenseModalComponent implements OnInit {
   }
 
   resolveSymbol(){
-    this.symbol = '€';
+    this.symbol = DEFAULT_SYMBOL;
   }
 
   onCategoryNewSelection($event: any) {
