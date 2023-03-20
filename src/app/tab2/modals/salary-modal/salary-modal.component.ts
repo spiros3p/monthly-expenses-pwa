@@ -58,7 +58,7 @@ export class SalaryModalComponent {
   subscribeToDayOfMonthFormFieldChanges() {
     this.salaryForm
       .get('dayOfMonth')
-      ?.valueChanges.pipe(debounceTime(100), distinctUntilChanged())
+      ?.valueChanges.pipe(debounceTime(100), distinctUntilChanged()) //distinct() as well
       .subscribe((value) => {
         if (!!value) {
           this.salaryForm
