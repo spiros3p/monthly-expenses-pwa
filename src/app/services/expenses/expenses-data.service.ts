@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { filter, from, Observable, of, Subject, switchMap } from 'rxjs';
-import { DataService } from '../data.service';
+import { DataService } from '../data-storage/data.service';
 import { ExpenseModel } from 'src/app/models/Expenses.model';
+import { v4 as uuidv4 } from 'uuid';
 
 const KEY = 'expensesTable';
 
@@ -31,7 +32,7 @@ export class ExpensesDataService {
   }
 
   async addData(expense: Omit<ExpenseModel, 'id'>) {
-    const newExpense: ExpenseModel = { ...expense, id: crypto.randomUUID() };
+    const newExpense: ExpenseModel = { ...expense, id: uuidv4() };
     const storedData = (await this.dataService.storage.get(KEY)) || [];
     storedData.push(newExpense);
     await this.dataService.storage.set(KEY, storedData);

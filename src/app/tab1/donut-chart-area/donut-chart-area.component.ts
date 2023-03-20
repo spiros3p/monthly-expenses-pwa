@@ -11,6 +11,9 @@ import { BaseChartDirective } from 'ng2-charts';
 import { ExpenseModel } from 'src/app/models/Expenses.model';
 import { SalaryModel } from 'src/app/models/Salary.model';
 import { ChangeDetectorRef } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+const DEFAULT_SYMBOL = environment.currency;
 
 @Component({
   selector: 'app-donut-chart-area',
@@ -21,7 +24,7 @@ export class DonutChartAreaComponent implements OnChanges {
   @ViewChild(BaseChartDirective) chart?: BaseChartDirective;
   @Input() expensesData: ExpenseModel[] = [];
   @Input() salaryData!: SalaryModel;
-  symbol: string = '€';
+  symbol: string = DEFAULT_SYMBOL;
   totalExpensesAmount: number = 0;
   salaryAmount = 0;
 

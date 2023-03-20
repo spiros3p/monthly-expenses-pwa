@@ -1,6 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SalaryModel } from 'src/app/models/Salary.model';
 import { Output, EventEmitter } from '@angular/core';
+import { environment } from 'src/environments/environment';
+
+const DEFAULT_SYMBOL = environment.currency;
 
 @Component({
   selector: 'app-salary-set',
@@ -22,7 +25,7 @@ export class SalarySetComponent implements OnInit {
   }
 
   resolveSymbol() {
-    this.symbol = '€';
+    this.symbol = DEFAULT_SYMBOL;
   }
 
   initSalary() {
