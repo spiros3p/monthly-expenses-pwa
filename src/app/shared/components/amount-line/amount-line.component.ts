@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
-const DEFAULT_SYMBOL = '€';
+const DEFAULT_SYMBOL = environment.currency;
 
 @Component({
   selector: 'app-amount-line',
