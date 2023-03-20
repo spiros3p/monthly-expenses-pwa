@@ -7,6 +7,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "deploy": "ng deploy --repo=https://github.com/spiros3p/monthly-expenses-pwa.git --name='spiros3p' --email=spiros3p@gmail.com",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "lint": "ng lint",
