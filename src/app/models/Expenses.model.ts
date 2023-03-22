@@ -6,9 +6,10 @@ export interface ExpenseModel {
   dayOfMonth: number;
   category: Categories;
   description: string;
-  isNotificationEnabled?: boolean;
-  isPaid?: boolean;
+  alertTime?: Date;
+  isAlertEnabled?: boolean;
   isDue?: boolean;
+  isPaid?: boolean;
 }
 
 export enum Categories {
