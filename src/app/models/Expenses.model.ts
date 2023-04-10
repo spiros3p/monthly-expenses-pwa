@@ -1,4 +1,4 @@
-import { FormControl } from "@angular/forms";
+import { FormControl } from '@angular/forms';
 
 export interface ExpenseModel {
   id: string;
@@ -7,14 +7,14 @@ export interface ExpenseModel {
   category: Categories;
   description: string;
   alertTime?: Date;
-  isAlertEnabled?: boolean;
+  isAlertEnabled: boolean;
   isDue?: boolean;
   isPaid?: boolean;
 }
 
 export enum Categories {
   Bills = 'Bills',
-  Food = 'Food'
+  Food = 'Food',
 }
 
 export interface ExpenseFormModel {
@@ -22,4 +22,13 @@ export interface ExpenseFormModel {
   dayOfMonth: FormControl<string | null>;
   category: FormControl<string | null>;
   description: FormControl<string | null>;
+}
+
+export class ExpenseModelClass {
+  static fillMandatoryFields(data: ExpenseModel): ExpenseModel {
+    return {
+      ...data,
+      isAlertEnabled: true,
+    };
+  }
 }

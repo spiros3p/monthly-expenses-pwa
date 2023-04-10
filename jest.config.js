@@ -5,5 +5,7 @@ module.exports = {
     testMatch: [
         "<rootDir>/src/**/*.spec.ts"
     ],
-    collectCoverage: true
+    collectCoverage: true,
+    roots: ["<rootDir>/src/"]
+
 };
