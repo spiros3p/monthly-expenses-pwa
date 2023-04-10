@@ -1,8 +1,8 @@
 <ion-toolbar color="success">
   <div class="salary-set-title">
-    <app-amount-line class="highlight" [amount]="salaryAmount"></app-amount-line>
+    <app-amount-line class="highlight" [amount]="salaryAmount.value"></app-amount-line>
     <span>on the</span>
-    <span class="highlight">{{ dayOfMonth }}th</span>
+    <span class="highlight">{{ dayOfMonth.value }}th</span>
     <span>of each month</span>
   </div>
   <ion-buttons slot="primary">

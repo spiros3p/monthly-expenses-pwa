@@ -41,9 +41,7 @@ export class ExpensesDataService {
 
   async removeData(id: string) {
     const storedData = (await this.dataService.storage.get(KEY)) || [];
-    const index = storedData.findIndex(
-      (expense: ExpenseModel) => (expense.id = id)
-    );
+    const index = storedData.findIndex((expense: ExpenseModel) => (expense.id = id));
     storedData.splice(index, 1);
     await this.dataService.storage.set(KEY, storedData);
     this.updetaData(storedData);

@@ -23,7 +23,7 @@ export class AmountLineComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges): void {
     this.resolveDecimalPart();
-    this.resolveIntegerPart();      
+    this.resolveIntegerPart();
   }
 
   private resolveDecimalPart() {

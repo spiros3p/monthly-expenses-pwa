@@ -8,14 +8,6 @@ import { SalaryDataService } from '../services/salary/salary-data.service';
 import { ExpenseModalComponent } from './modals/expense-modal/expense-modal.component';
 import { SalaryModalComponent } from './modals/salary-modal/salary-modal.component';
 
-const dummyExpense: ExpenseModel = {
-  id: '12',
-  amount: 35,
-  dayOfMonth: 5,
-  category: Categories['Bills'],
-  description: 'Netflix subscription Netflix subscription',
-};
-
 @Component({
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
