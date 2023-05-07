@@ -16,6 +16,8 @@ export class Tab3Page implements OnInit {
   listData2 = [];
   salarySet = new BehaviorSubject(true);
 
+  index = 0;
+
   constructor() {
     console.log('constr 3');
   }
@@ -25,10 +27,11 @@ export class Tab3Page implements OnInit {
   }
 
   async notifyBasic() {
+    this.index = this.index + 1;
     await LocalNotifications.schedule({
       notifications: [
         {
-          id: 0,
+          id: this.index,
           title: 'hello world',
           body: 'this is it',
           extra: {
