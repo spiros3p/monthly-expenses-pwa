@@ -1,8 +1,8 @@
 {
   "name": "monthly-expenses-pwa",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Spiros3p",
+  "homepage": "https://spiros3p.github.io/monthly-expenses-pwa/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
