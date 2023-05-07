@@ -8,7 +8,7 @@
     "start": "ng serve",
     "build": "ng build --base-href https://spiros3p.github.io/monthly-expenses-pwa/",
     "build:pages": "ng build --base-href https://spiros3p.github.io/monthly-expenses-pwa/ --output-path docs",
-    "build:ionic": "npx ionic build --engine=browser -- --base-href https://spiros3p.github.io/monthly-expenses-pwa/ --output-path build",
+    "build:ionic": "npx ionic build -- --base-href https://spiros3p.github.io/monthly-expenses-pwa/ --output-path build",
     "watch": "ng build --watch --configuration development",
     "test": "jest",
     "lint": "ng lint",
