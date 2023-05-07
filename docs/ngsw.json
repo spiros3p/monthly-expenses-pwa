@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1683483025839,
+  "timestamp": 1683485081093,
   "index": "https://spiros3p.github.io/monthly-expenses-pwa/index.html",
   "assetGroups": [
     {
@@ -171,7 +171,7 @@
     "https://spiros3p.github.io/monthly-expenses-pwa/common.f3be1a08733b6f74.js": "42e85094eef84cf82dd409cbfa95fc6d0d8a1b47",
     "https://spiros3p.github.io/monthly-expenses-pwa/index.html": "b386056e37d2023d70e06de4115ee505f34f4213",
     "https://spiros3p.github.io/monthly-expenses-pwa/main.109dfa28983b12e9.js": "2f671eea7bc6e62a0e522fcda45714743cab45a7",
-    "https://spiros3p.github.io/monthly-expenses-pwa/manifest.webmanifest": "7fb0aaab9afe16df4b05e5ed170d3080401cbc63",
+    "https://spiros3p.github.io/monthly-expenses-pwa/manifest.webmanifest": "25166033cc973afcc0395830dbc3e3fdd2e05633",
     "https://spiros3p.github.io/monthly-expenses-pwa/polyfills-core-js.aae6b5d519b4cdc7.js": "e6fb2e72255d987bc5dc500fb064261c793716a4",
     "https://spiros3p.github.io/monthly-expenses-pwa/polyfills-dom.3a5e3168052f1fc5.js": "50f6ff473a0568bffb8a9d412d7efaced2d36137",
     "https://spiros3p.github.io/monthly-expenses-pwa/polyfills.f946d3779880c5da.js": "2d435555a18426b78e64b287d86e642fbb3405a5",
