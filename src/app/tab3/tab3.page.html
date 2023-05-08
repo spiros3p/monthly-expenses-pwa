@@ -17,7 +17,13 @@
     Notify Basic
   </ion-button>
 
-  <ion-button (click)="notifyAdvance()" color="tertiary" expand="block">
-    Notify Advance
-  </ion-button>
+  <form [formGroup]="testForm">
+    <ion-input class="" label="Notify in the next (seconds):" placeholder="seconds"
+      type="number" inputmode="numeric" pattern="[0-9]*" formControlName="notifyInSeconds"></ion-input>
+    <ion-button (click)="notifyAdvance()" color="tertiary" class="advance-button"
+      expand="block">
+      Notify Advance
+    </ion-button>
+  </form>
+
 </ion-content>

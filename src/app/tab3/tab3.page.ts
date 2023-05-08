@@ -5,6 +5,7 @@ import { ExpensesDataService } from '../services/expenses/expenses-data.service'
 import { SalaryDataService } from '../services/salary/salary-data.service';
 
 import { LocalNotifications } from '@capacitor/local-notifications';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-tab3',
@@ -15,6 +16,10 @@ export class Tab3Page implements OnInit {
   listData: unknown[] = [];
   listData2 = [];
   salarySet = new BehaviorSubject(true);
+
+  testForm = new FormGroup({
+    notifyInSeconds: new FormControl('', [Validators.required])
+  })
 
   index = 0;
 
@@ -43,12 +48,19 @@ export class Tab3Page implements OnInit {
   }
 
   async notifyAdvance() {
+    this.index = this.index + 1;
+    const seconds = this.testForm.get('notifyInSeconds')!.value
+    if (!seconds) return;
+    
+    const date = new Date()
+    date.setSeconds(date.getSeconds() + parseInt(seconds))
+
     await LocalNotifications.schedule({
       notifications: [
         {
-          id: 0,
+          id: this.index,
           schedule: {
-            every: 'month'
+            at: date
           },
           title: 'hello world',
           body: 'this is it',

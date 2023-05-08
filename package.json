@@ -14,7 +14,12 @@
     "lint": "ng lint",
     "e2e": "playwright test",
     "e2e:debug": "playwright test --project chromium --headed",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "ios": "ionic cap add ios",
+    "ios:open": "ionic cap open ios",
+    "android": "ionic cap add android",
+    "android:open": "ionic cap open android",
+    "sync": "ionic cap copy && ionic cap sync"
   },
   "private": true,
   "dependencies": {
@@ -29,7 +34,7 @@
     "@capacitor/app": "5.0.1",
     "@capacitor/core": "5.0.1",
     "@capacitor/haptics": "5.0.1",
-    "@capacitor/ios": "^5.0.1",
+    "@capacitor/ios": "5.0.1",
     "@capacitor/keyboard": "5.0.1",
     "@capacitor/local-notifications": "5.0.1",
     "@capacitor/status-bar": "5.0.1",
