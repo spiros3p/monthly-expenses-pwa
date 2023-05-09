@@ -28,7 +28,15 @@ export class Tab3Page implements OnInit {
   }
 
   async ngOnInit() {
-    await LocalNotifications.requestPermissions();
+    try{
+      await LocalNotifications.requestPermissions();
+      console.log('local notif ready');
+      console.log(await LocalNotifications.checkPermissions())
+      
+    } catch (e) {
+      console.log(e)
+      console.error(e)
+    }
   }
 
   async notifyBasic() {
