@@ -32,43 +32,53 @@ export class Tab3Page implements OnInit {
   }
 
   async notifyBasic() {
-    this.index = this.index + 1;
-    await LocalNotifications.schedule({
-      notifications: [
-        {
-          id: this.index,
-          title: 'hello world',
-          body: 'this is it',
-          extra: {
-            data: 'pass data',
+    try {
+      this.index = this.index + 1;
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            id: this.index,
+            title: 'hello world',
+            body: 'this is it',
+            extra: {
+              data: 'pass data',
+            },
           },
-        },
-      ],
-    });
+        ],
+      });
+    } catch (e) {
+      console.log(e)
+      console.error(e)
+    }
   }
 
   async notifyAdvance() {
-    this.index = this.index + 1;
-    const seconds = this.testForm.get('notifyInSeconds')!.value
-    if (!seconds) return;
-    
-    const date = new Date()
-    date.setSeconds(date.getSeconds() + parseInt(seconds))
+    try {
+      this.index = this.index + 1;
+      const seconds = this.testForm.get('notifyInSeconds')!.value
+      if (!seconds) return;
 
-    await LocalNotifications.schedule({
-      notifications: [
-        {
-          id: this.index,
-          schedule: {
-            at: date
+      const date = new Date()
+      date.setSeconds(date.getSeconds() + parseInt(seconds))
+
+      await LocalNotifications.schedule({
+        notifications: [
+          {
+            id: this.index,
+            schedule: {
+              at: date
+            },
+            title: 'hello world',
+            body: 'this is it',
+            extra: {
+              data: 'pass data',
+            },
           },
-          title: 'hello world',
-          body: 'this is it',
-          extra: {
-            data: 'pass data',
-          },
-        },
-      ],
-    });
+        ],
+      });
+    } catch (e) {
+      console.log(e)
+      console.error(e)
+    }
   }
 }
