@@ -113,7 +113,7 @@
     }
   },
   "cli": {
-    "schematicCollections": ["@ionic/angular-toolkit", "@ngneat/spectator"],
+    "schematicCollections": ["@ngneat/spectator", "@ionic/angular-toolkit"],
     "analytics": false
   },
   "schematics": {

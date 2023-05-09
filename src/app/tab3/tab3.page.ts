@@ -6,6 +6,7 @@ import { SalaryDataService } from '../services/salary/salary-data.service';
 
 import { LocalNotifications } from '@capacitor/local-notifications';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { NotificationsService } from '../services/notifications/notifications.service';
 
 @Component({
   selector: 'app-tab3',
@@ -18,75 +19,23 @@ export class Tab3Page implements OnInit {
   salarySet = new BehaviorSubject(true);
 
   testForm = new FormGroup({
-    notifyInSeconds: new FormControl('', [Validators.required])
-  })
+    notifyInSeconds: new FormControl('', [Validators.required]),
+  });
 
-  index = 0;
-
-  constructor() {
+  constructor(private notificationsService: NotificationsService) {
     console.log('constr 3');
   }
 
   async ngOnInit() {
-    try{
-      await LocalNotifications.requestPermissions();
-      console.log('local notif ready');
-      console.log(await LocalNotifications.checkPermissions())
-      
-    } catch (e) {
-      console.log(e)
-      console.error(e)
-    }
+    await this.notificationsService.requestPermissions();
   }
 
   async notifyBasic() {
-    try {
-      this.index = this.index + 1;
-      await LocalNotifications.schedule({
-        notifications: [
-          {
-            id: this.index,
-            title: 'hello world',
-            body: 'this is it',
-            extra: {
-              data: 'pass data',
-            },
-          },
-        ],
-      });
-    } catch (e) {
-      console.log(e)
-      console.error(e)
-    }
+    this.notificationsService.scheduleNow();
   }
 
   async notifyAdvance() {
-    try {
-      this.index = this.index + 1;
-      const seconds = this.testForm.get('notifyInSeconds')!.value
-      if (!seconds) return;
-
-      const date = new Date()
-      date.setSeconds(date.getSeconds() + parseInt(seconds))
-
-      await LocalNotifications.schedule({
-        notifications: [
-          {
-            id: this.index,
-            schedule: {
-              at: date
-            },
-            title: 'hello world',
-            body: 'this is it',
-            extra: {
-              data: 'pass data',
-            },
-          },
-        ],
-      });
-    } catch (e) {
-      console.log(e)
-      console.error(e)
-    }
+    const seconds = this.testForm.get('notifyInSeconds')!.value;
+    this.notificationsService.scheduleAt(seconds);
   }
 }
