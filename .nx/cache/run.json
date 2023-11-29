@@ -1,8 +1,8 @@
 {
   "run": {
     "command": "nx build -- --base-href https://spiros3p.github.io/monthly-expenses-pwa/ --output-path docs",
-    "startTime": "2023-11-29T20:08:00.500Z",
-    "endTime": "2023-11-29T20:08:24.337Z",
+    "startTime": "2023-11-29T20:14:21.086Z",
+    "endTime": "2023-11-29T20:14:27.216Z",
     "inner": false
   },
   "tasks": [
@@ -10,9 +10,9 @@
       "taskId": "app:build:production",
       "target": "build",
       "projectName": "app",
-      "hash": "1319073272169475860",
-      "startTime": "2023-11-29T20:08:00.505Z",
-      "endTime": "2023-11-29T20:08:24.337Z",
+      "hash": "15626979013838780125",
+      "startTime": "2023-11-29T20:14:21.091Z",
+      "endTime": "2023-11-29T20:14:27.216Z",
       "params": "",
       "cacheStatus": "cache-miss",
       "status": 0
