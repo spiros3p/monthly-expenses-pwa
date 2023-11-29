@@ -1,8 +1,6 @@
 import os
 
 x = input('Commit message: ')
-
-
 try:
     os.system('rm -R docs')
 except:
