@@ -107,6 +107,13 @@
             },
             "configurations": {}
           },
+          "build:ionic": {
+            "executor": "nx:run-script",
+            "options": {
+              "script": "build:ionic"
+            },
+            "configurations": {}
+          },
           "watch": {
             "executor": "nx:run-script",
             "options": {
@@ -14254,6 +14261,11 @@
         "source": "app",
         "target": "npm:@popperjs/core",
         "type": "static"
+      },
+      {
+        "source": "app",
+        "target": "npm:@popperjs/core",
+        "type": "dynamic"
       },
       {
         "source": "app",
