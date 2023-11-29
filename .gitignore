@@ -6,7 +6,7 @@
 /www
 /build
 
-.nx
+/.nx
 
 *~
 *.sw[mnpcod]
