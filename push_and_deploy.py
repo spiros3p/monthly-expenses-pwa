@@ -5,8 +5,7 @@ try:
     os.system('rm -R docs')
 except:
     print("'docs' directory does not exist")
-
-os.system('npm run build:ionic')
+os.system('npm run build:pages')
 os.system('cp -R build docs')
 os.system('git add .')
 os.system(f'git commit -m "{x}"')

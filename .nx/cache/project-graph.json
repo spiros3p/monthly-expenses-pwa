@@ -107,13 +107,6 @@
             },
             "configurations": {}
           },
-          "build:ionic": {
-            "executor": "nx:run-script",
-            "options": {
-              "script": "build:ionic"
-            },
-            "configurations": {}
-          },
           "watch": {
             "executor": "nx:run-script",
             "options": {
